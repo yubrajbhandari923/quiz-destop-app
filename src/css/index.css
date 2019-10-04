@@ -1,12 +1,13 @@
 body{
   margin: 0px;
   padding: 0px;
+    background: #efefef;
 }
 header{
   display: flex;
   justify-content: center;
   padding: 20px;
-  background: #efefef;
+
 }
 h1{
   font: 40px robotothin;
@@ -30,6 +31,13 @@ h1{
   height: 90px;
   background: whitesmoke;
   border-radius: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.icons img{
+  width:35px;
 }
 li{
   border-radius: 10px;
@@ -55,11 +63,17 @@ li >h2{
 }
 li >h4{
   font-weight: normal;
+  font:16px arial;
 }
+
 footer{
   margin-left: 20px;
+  font: 15px arial;
 }
 footer b{
   text-decoration: underline;
-  cursor: pointer;s
+  cursor: pointer;
+}
+footer b:hover{
+  text-decoration: none;
 }
