@@ -9,6 +9,8 @@ function createWindow () {
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    x:0,
+    y:0,
     webPreferences: {
       nodeIntegration: true
     },
