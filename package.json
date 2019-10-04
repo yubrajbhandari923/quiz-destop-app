@@ -1,0 +1,26 @@
+{
+  "name": "quiz-desktop-app",
+  "version": "1.0.0",
+  "description": "\"# quiz-destop-app\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yubrajbhandari923/quiz-destop-app.git"
+  },
+  "keywords": [
+    "quiz",
+    "desktop"
+  ],
+  "author": "Ideal Coders !",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yubrajbhandari923/quiz-destop-app/issues"
+  },
+  "homepage": "https://github.com/yubrajbhandari923/quiz-destop-app#readme",
+  "devDependencies": {
+    "electron": "^6.0.11"
+  }
+}
