@@ -5,11 +5,40 @@
     <title>Hello World!</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
+    <link rel="stylesheet" href="..\css\index.css">
+    <link rel="stylesheet" href="..\css\fonts\fonts.css">
+    <script src="../js/index.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <header>
+        <h1> Welcome! Study, Learn And Share Quizzes     </h1>
+    </header>
+      <section class="container">
+        <ul>
+           <li>
+             <div class="icons"></div> 
+             <h2>Create!</h2>
+             <h4>Manage your questions & Group them </h4>
+            </li>
+           <li>
+             <div class="icons"></div> 
+             <h2>Host!</h2>
+             <h4>Host a quiz over LAN. </h4>
+            </li>
+           <li>
+             <div class="icons"></div> 
+             <h2>Take!</h2>
+             <h4>Take part in quiz hosted by device in same LAN</h4>
+            </li>
+           <li>
+             <div class="icons"></div> 
+             <h2>Study!</h2>
+             <h4> Study Quizzes from Internet</h4>
+            </li>
+        </ul>
+      </section>
+      <footer>
+        <p>Need Help? or Found a Bug? Please contact to us in <b id=fb>Facebook</b></p>
+      </footer>
   </body>
 </html>

@@ -1,0 +1,65 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+header{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: #efefef;
+}
+h1{
+  font: 40px robotothin;
+  font-weight: normal;
+}
+.container{
+  display: flex;
+  justify-content: center;
+ 
+}
+.container > ul{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  padding:0;
+  margin:20px;
+  width: 100vw;
+} 
+.icons{
+  width: 90px;
+  height: 90px;
+  background: whitesmoke;
+  border-radius: 100%;
+}
+li{
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  margin: 10px;
+  color:white;
+  list-style: none;
+  background: linear-gradient(to top, #ee0979, #ff6a00);
+  padding: 20px;
+  cursor:pointer;
+  transition: ease-in-out 2s;
+}
+li:hover{
+    background: linear-gradient(to bottom, #ee0979, #ff6a00);
+}
+li >h2{
+ 
+  font: 25px robotoslab;
+  font-weight: normal;
+}
+li >h4{
+  font-weight: normal;
+}
+footer{
+  margin-left: 20px;
+}
+footer b{
+  text-decoration: underline;
+  cursor: pointer;s
+}
