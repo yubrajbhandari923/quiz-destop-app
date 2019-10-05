@@ -1,9 +1,37 @@
 <html>
     <head>
+            <meta charset="UTF-8">
         <link rel="stylesheet" href="..\css\create-index.css">
         <link rel="stylesheet" href="..\css\fonts\fonts.css">
     </head>
+    <script src="..\js\vue.js"></script>
     <body>
-create page
-    </body>
+        <header>
+            <h1>Projects</h1>
+        </header>
+        <section id="app" class="container">
+            <div class="tabs">
+                <ul>
+                    <li class="tab" :class="{ 'active-tab' : projectTab }" @click="tabchange">Manage Projects</li>
+                    <li class="tab" :class="{ 'active-tab' : !projectTab }" @click="tabchange">Manage Questions</li>
+                </ul>
+            </div>
+            <section class="hero">
+                <ul v-if="projectTab" class="proj-contain">
+                    <li class="proj"
+                        v-for="project in projects">
+                        <span class="projName">{{ project.Name }}</span>
+                        <span class="projDate"><b>Date: </b>{{ project.Date }}</span>
+                        <span class="projAuthor"><b>Author: </b>{{ project.Author }}</span>
+                        <span class="projNSets"><b>No. of Sets </b> {{ project.noOfSets }}</span>
+                        <span class="projProtected"><b>Protected :</b> <span v-if="project.Protected">Yes</span><span v-else> No</span> </span>
+                    </li>
+                </ul>
+                <ul v-else class="questions-contain">
+                    No questions added yet
+                </ul>
+        </section>
+    </section>
+</body>
+<script src="..\js\create-index.js"></script>
 </html>

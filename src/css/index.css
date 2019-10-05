@@ -48,13 +48,15 @@ li{
   margin: 10px;
   color:white;
   list-style: none;
-  background: linear-gradient(to top, #ee0979, #ff6a00);
+  background:   linear-gradient(to bottom, #ff00cc, #333399);
   padding: 20px;
   cursor:pointer;
-  transition: ease-in-out 2s;
+  transition: linear 0.5s;
+
 }
 li:hover{
-    background: linear-gradient(to bottom, #ee0979, #ff6a00);
+    box-shadow: 0px 15px 25px 1px black;
+  transform: scale(1.05);
 }
 li >h2{
  
