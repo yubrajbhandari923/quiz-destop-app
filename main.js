@@ -1,5 +1,9 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-
+let userdata = {
+  projectName: "",
+  password:"dont guess",
+  renderproject: false
+}
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -53,9 +57,38 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
+// for taking to particular page after main-index page 
 ipcMain.on("choosed", (e,a) => {
-  console.log(a)
   win.loadFile("src/html/"+a+"-index.html")
   e.reply("done")
+})
+// for opening the choosed project datas
+ipcMain.on("project-Name",(e,a) => {
+    win.loadFile("src/html/manage-project.html")
+    // store the project opened for management in userdata.projecctName
+    userdata.projectName = a;
+})
+// to give project name to another render process
+ipcMain.on("project-Name1",(e,a) => {
+  // Send other data related to project by extrating form database here.!1
+  userdata.password = "letmein" ;
+  let projectdata = [userdata.projectName,"2005 sept 2","Yubraj Bhandari",true,3,'set1','set2','set3']
+  e.returnValue = projectdata 
+})
+// Password Checking Process
+ipcMain.on("check-password",(e,a) =>{
+  if(a===userdata.password){
+    e.returnValue = true;
+    userdata.renderproject = true;
+  }else{
+    e.returnValue = false;
+  }
+})
+// to permit to render the project or not 
+ipcMain.on("renderProject",(e,a) => {
+  e.returnValue = userdata.renderproject;
+})
+// display create section if cancled the password box
+ipcMain.on('display-create-section',(e,a) => {
+  win.loadFile('src/html/create-index.html')
 })

@@ -1,6 +1,7 @@
 // Back end 
 const electron = require('electron')
 const BrowserWindow = electron.remote.BrowserWindow
+const { ipcRenderer } = electron
 
 
 // front End 
@@ -47,6 +48,10 @@ var app = new Vue({
             win.on('close', function(){ win = null})
             win.loadFile('src/html/add-'+key+'.html');
             win.show();
+        },
+        projectclicked(Name){
+
+            ipcRenderer.send("project-Name",Name)
         }
 
     }

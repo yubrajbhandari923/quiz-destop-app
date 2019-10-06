@@ -19,7 +19,8 @@
             <section class="hero">
                 <ul v-if="projectTab" class="proj-contain">
                     <li class="proj"
-                        v-for="project in projects">
+                    v-for="project in projects"
+                    @click="projectclicked(project.Name)">
                         <span class="projName">{{ project.Name }}</span>
                         <span class="projDate"><b>Date: </b>{{ project.Date }}</span>
                         <span class="projAuthor"><b>Author: </b>{{ project.Author }}</span>
