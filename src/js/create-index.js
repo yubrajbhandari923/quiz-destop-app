@@ -1,3 +1,9 @@
+// Back end 
+const electron = require('electron')
+const BrowserWindow = electron.remote.BrowserWindow
+
+
+// front End 
 var app = new Vue({
     el:"#app",
     data:{
@@ -29,6 +35,21 @@ var app = new Vue({
     methods : {
         tabchange() {
             this.projectTab = this.projectTab ? false : true ;
+        },
+        addclicked(){
+            let key = this.projectTab ? "project" : "question";
+            let win = new BrowserWindow({ 
+                width:500,
+                height:500 ,
+                frame: false,
+                webPreferences:{nodeIntegration: true}
+            })
+            win.on('close', function(){ win = null})
+            win.loadFile('src/html/add-'+key+'.html');
+            win.show();
         }
+
     }
 })
+
+

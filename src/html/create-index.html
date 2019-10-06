@@ -26,11 +26,11 @@
                         <span class="projNSets"><b>No. of Sets </b> {{ project.noOfSets }}</span>
                         <span class="projProtected"><b>Protected :</b> <span v-if="project.Protected">Yes</span><span v-else> No</span> </span>
                     </li>
-                    <div class="add-project-button butt"> + Add project</div>
+                    <div class="add-project-button butt" @click="addclicked"> + Add project</div>
                 </ul>
                 <ul v-else class="questions-contain">
                     No questions added yet
-                    <div class="add-question-button butt"> + Add Question</div>
+                    <div class="add-question-button butt" @click="addclicked"> + Add Question</div>
                 </ul>
         </section>
     </section>
