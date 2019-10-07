@@ -1,0 +1,123 @@
+body{
+    margin:0px;
+    padding: 0;
+    background : #efefef;
+    font-family: quicksand;
+  }
+  header {
+    text-align: left;
+   padding: 10px 50px; 
+    
+  }
+  header h1{
+    font: 40px robotothin;
+    font-weight: normal;
+  }
+ul{
+    list-style: none;
+    padding:0;
+  }
+  .tabs ul{
+    text-align: center;
+    display: flex;
+    margin: 0px 50px
+  }
+  .tabs ul li{
+    font: 18px robotothin ;
+    letter-spacing: 1px;
+    padding: 10px ;
+    margin: 5px 0px;
+    border: 0px solid black;
+    border-radius: 20px  10px 5px 0px;
+    cursor:pointer;
+  } 
+  .active-tab{
+    background: royalblue;
+    color: white;
+    transform: translatey(-5px);
+    box-shadow: 0px 0px 10px 1px royalblue;
+  }
+
+.viewsets-container {
+  background: white;
+  display:flex;
+  min-height: 500px;
+}
+.section-head{
+  font:28px robotothin;
+  padding: 5px 20px;;
+  display: block;
+}
+.sets-misc{
+  width:100%;
+  position:relative;
+  display: flex;
+  flex-flow: column;
+}
+.sets-misc > div{
+  cursor: pointer;
+  margin: 5px 10px;
+  width:90%;
+  border-bottom: 1px solid black;
+}
+.sets-list{
+  flex-basis: 250px;
+  border-right:1px solid black;
+}
+.sets-list > li{
+  text-align: center;
+  padding:10px;
+  margin: 5px 0px;
+  cursor:pointer;
+}
+.set:hover{
+  background: #ddd;
+  color:black;
+}
+.sets-misc > div > ul{
+  padding: 5px 200px;
+}
+.butt {
+  display: block;
+  padding: 12px;
+  font: 20px josefinsans;
+  color: white;
+  margin: 10px;
+  width: max-content;
+  display: flex;
+  border-radius: 20px;
+  cursor:pointer;
+  
+}
+.blue-butt{
+  background: royalblue;
+  box-shadow: 0px 0px 5px 1px royalblue; 
+
+}
+.blue-butt:hover{
+  box-shadow: 0px 0px 20px 1px royalblue; 
+}
+.butt, form{
+   -webkit-app-region: no-drag;
+}
+.red-butt{
+  background: tomato;
+  box-shadow: 0px 0px 5px 1px tomato;    
+}
+.red-butt:hover{
+  box-shadow: 0px 0px 20px 1px tomato; 
+}
+.green-butt{
+  background: #1b998b;
+  box-shadow: 0px 0px 5px 1px #1b998b;    
+}
+.green-butt:hover{
+  box-shadow: 0px 0px 20px 1px #1b998b; 
+}
+.active-set{
+  background: royalblue;
+  color: white;
+  border-radius: 0 10px 30px 0px;
+  transform: scale(1.08);
+  margin: 0px 15px;
+}

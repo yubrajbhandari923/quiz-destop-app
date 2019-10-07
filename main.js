@@ -72,7 +72,7 @@ ipcMain.on("project-Name",(e,a) => {
 ipcMain.on("project-Name1",(e,a) => {
   // Send other data related to project by extrating form database here.!1
   userdata.password = "letmein" ;
-  let projectdata = [userdata.projectName,"2005 sept 2","Yubraj Bhandari",true,3,'set1','set2','set3']
+  let projectdata = [userdata.projectName,"2005 sept 2","Yubraj Bhandari",false,3,'set1','set2','set3']
   e.returnValue = projectdata 
 })
 // Password Checking Process

@@ -23,15 +23,47 @@ document.addEventListener("DOMContentLoaded",() => {
             win = null
             renderProject = ipcRenderer.sendSync('renderProject',"value");
             if(renderProject){
-                loadData()
+                loadData();
             }else{
                 ipcRenderer.send('display-create-section',"value");
             }
         })
         win.show();
-
+        
+    }else{
+        loadData();
     }
 })
 function loadData(){
-    alert("works")
+    let app = new Vue({
+        el : "#app",
+        data:{
+            title : projectData[0],
+           UIdata :{ projectTab:true ,optionView: false, quesView:true, activeSet: -1} 
+        },
+        methods :{
+            tabchange() {
+                this.UIdata.projectTab = this.UIdata.projectTab ? false : true ;
+            },
+            toggOpts(){
+                this.UIdata.optionView = this.UIdata.optionView ? false : true ;
+            },
+            toggQues(){
+                this.UIdata.quesView = this.UIdata.quesView ? false : true ;
+            },
+            activateSet(n){
+                this.UIdata.activeSet = n
+            }
+        },
+        computed:{
+            sets: function(){
+                let temp = projectData
+                temp.splice(0,5)
+                console.log(temp)
+                return temp
+            }
+        }
+    })
+
+
 }

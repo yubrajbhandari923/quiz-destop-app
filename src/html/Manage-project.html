@@ -1,8 +1,61 @@
 <html>
     <head>
-        <script src="../js/manage-project.js"></script>
+        <link rel=stylesheet href="..\css\manage-project.css">
+        <link rel=stylesheet href="..\css\fonts\fonts.css">
+        <script src="../js/Vue.js"></script>
     </head>
     <body>
-        djdjk
+        <div class="loading">loading....</div>        
+        <section clas="superContainer" id="app">
+            <header>
+                <h1> {{ title }} </h1>
+            </header>
+            <section class="container">
+                <div class="tabs">
+                    <ul>
+                        <li class="tab" :class="{ 'active-tab' : UIdata.projectTab }"  @click="tabchange">Manage sets</li>
+                        <li class="tab" :class="{ 'active-tab' : !UIdata.projectTab }" @click="tabchange">Project Settings</li>
+                    </ul>
+                </div>
+                <section class="viewsets-container">
+                    <ul class="sets-list">
+                        <span class="section-head">Sets
+                            <div class="butt blue-butt"> Add set</div>
+                        </span>
+                        <li class='set'
+                        v-for="set in sets"
+                        :class="{ 'active-set' : (UIdata.activeSet === sets.indexOf(set)) }"
+                        @click="activateSet(sets.indexOf(set))" 
+                        >
+                        <span>{{ set }}</span>
+                    </li>
+                </ul>
+                <div class="sets-misc">
+                    <div class="set-setting-container">
+                        <span class="section-head" @click="toggOpts">Options</span>
+                        <div class="options-contents content" v-if="UIdata.optionView">
+                            <ul>
+                                <div class="butt green-butt"> Add a subset</div>
+                            </ul>  
+                        </div>
+                        
+                    </div>
+                    <div class="set-questions-container" >
+                        <span class="section-head" @click="toggQues">Questions</span>
+                        <div class="questions-content content" v-if="UIdata.quesView">
+                           <ul>
+                               No questions to display.
+                            </ul>
+                        <div class="butt blue-butt" style='float: right;'> Add question</div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+            </section>
+            <footer>
+                
+            </footer>
+        </section>
     </body>
+    <script src="../js/manage-project.js"></script>
 </html>
