@@ -43,7 +43,9 @@ var app = new Vue({
                 width:500,
                 height:500 ,
                 frame: false,
-                webPreferences:{nodeIntegration: true}
+                webPreferences:{nodeIntegration: true},
+                resizable:false ,
+
             })
             win.on('close', function(){ win = null})
             win.loadFile('src/html/add-'+key+'.html');

@@ -114,6 +114,20 @@ ul{
 .green-butt:hover{
   box-shadow: 0px 0px 20px 1px #1b998b; 
 }
+  .black-butt{
+  background: #2e294e;
+  box-shadow: 0px 0px 5px 1px #2e294e;    
+}
+.black-butt:hover{
+  box-shadow: 0px 0px 20px 1px #2e294e; 
+}
+  .yellow-butt{
+  background: #f5d547;
+  box-shadow: 0px 0px 5px 1px #f5d547;    
+}
+.yellow-butt:hover{
+  box-shadow: 0px 0px 20px 1px #f5d547; 
+}
 .active-set{
   background: royalblue;
   color: white;

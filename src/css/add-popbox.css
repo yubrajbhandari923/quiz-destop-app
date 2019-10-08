@@ -1,12 +1,16 @@
 body{
   margin:0px;
-   background: #ddd;
    border:1px solid grey;
+   border-radius: 10px;
+   opacity: 1;
 }
 header{
    font: 40px robotothin;
   padding:20px;
- 
+ background: #ddd;
+}
+.container{
+   border-radius: 10px;
 }
 form {
   display: flex;
@@ -18,6 +22,7 @@ form input{
    font: 20px quicksand;
    padding:10px;
    margin: 5px;
+   background: #ddd;
    border:none;
 }
 form input:focus{
@@ -59,26 +64,32 @@ form div input:checked ~ body{
    font: 20px josefinsans;
    color: white;
    margin: 10px 30px;
-   width: max-content;
-   border-radius: 20px;
+   /* width: max-content; */
+   border-radius: 5px;
    cursor:pointer;
-   transition : linear 1s;
  }
  .blue-butt{
    background: royalblue;
+   
+}
+.blue-butt:hover{
    box-shadow: 0px 0px 5px 1px royalblue; 
-
- }
- .blue-butt:hover{
-   box-shadow: 0px 0px 20px 1px royalblue; 
+   /* box-shadow: 0px 0px 20px 1px royalblue;  */
  }
  .butt, form{
     -webkit-app-region: no-drag;
 }
 .red-butt{
    background: tomato;
-   box-shadow: 0px 0px 5px 1px tomato;    
 }
 .red-butt:hover{
-   box-shadow: 0px 0px 20px 1px tomato; 
+   box-shadow: 0px 0px 5px 1px tomato;    
+   /* box-shadow: 0px 0px 20px 1px tomato  */
+}
+.exitbutt{
+   position: fixed;
+   top: 0px;
+   right: 0px;
+   z-index: 10;
+   cursor:pointer;
 }

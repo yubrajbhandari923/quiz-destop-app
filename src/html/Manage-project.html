@@ -10,6 +10,8 @@
             <header>
                 <h1> {{ title }} </h1>
             </header>
+
+
             <section class="container">
                 <div class="tabs">
                     <ul>
@@ -17,7 +19,7 @@
                         <li class="tab" :class="{ 'active-tab' : !UIdata.projectTab }" @click="tabchange">Project Settings</li>
                     </ul>
                 </div>
-                <section class="viewsets-container">
+                <section v-if="UIdata.projectTab" class="viewsets-container">
                     <ul class="sets-list">
                         <span class="section-head">Sets
                             <div class="butt blue-butt"> Add set</div>
@@ -28,6 +30,11 @@
                         @click="activateSet(sets.indexOf(set))" 
                         >
                         <span>{{ set }}</span>
+                        <ul class="subset-container">
+                            <li class="subset"> Subset 1</li>
+                            <li class="subset"> Subset 2</li>
+                            <li class="subset"> Subset 3</li>
+                        </ul>
                     </li>
                 </ul>
                 <div class="sets-misc">
@@ -35,7 +42,7 @@
                         <span class="section-head" @click="toggOpts">Options</span>
                         <div class="options-contents content" v-if="UIdata.optionView">
                             <ul>
-                                <div class="butt green-butt"> Add a subset</div>
+                                <div class="butt yellow-butt"> Add a subset</div>
                             </ul>  
                         </div>
                         
@@ -51,10 +58,14 @@
                     </div>
                     </div>
                 </section>
+
+
+                <section v-if="!UIdata.projectTab" class="project-settings-container">
+                    <b>project Settings here</b>
+                </section>
+
+
             </section>
-            <footer>
-                
-            </footer>
         </section>
     </body>
     <script src="../js/manage-project.js"></script>

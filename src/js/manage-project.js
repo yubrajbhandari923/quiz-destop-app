@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded",() => {
     }
 })
 function loadData(){
+        
+
     let app = new Vue({
         el : "#app",
         data:{
