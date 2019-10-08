@@ -17,6 +17,9 @@ ul{
     list-style: none;
     padding:0;
   }
+ol {
+  list-style: none;;
+}
   .tabs ul{
     text-align: center;
     display: flex;
@@ -63,16 +66,6 @@ ul{
 .sets-list{
   flex-basis: 250px;
   border-right:1px solid black;
-}
-.sets-list > li{
-  text-align: center;
-  padding:10px;
-  margin: 5px 0px;
-  cursor:pointer;
-}
-.set:hover{
-  background: #ddd;
-  color:black;
 }
 .sets-misc > div > ul{
   padding: 5px 200px;
@@ -128,10 +121,19 @@ ul{
 .yellow-butt:hover{
   box-shadow: 0px 0px 20px 1px #f5d547; 
 }
+.set{
+  display: block;
+  width: 100%;
+  cursor:pointer;
+  text-align: center;
+  padding: 10px 0px;
+  font-size: 20px; 
+  margin: 5px 0px;
+}
 .active-set{
   background: royalblue;
   color: white;
   border-radius: 0 10px 30px 0px;
   transform: scale(1.08);
-  margin: 0px 15px;
+  margin: 0px;
 }

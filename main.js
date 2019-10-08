@@ -72,7 +72,26 @@ ipcMain.on("project-Name",(e,a) => {
 ipcMain.on("project-Name1",(e,a) => {
   // Send other data related to project by extrating form database here.!1
   userdata.password = "letmein" ;
-  let projectdata = [userdata.projectName,"2005 sept 2","Yubraj Bhandari",false,3,'set1','set2','set3']
+
+
+  let projectdata = [userdata.projectName,"2005 sept 2","Yubraj Bhandari",false,3,{
+    Name: 'set1',
+    id:1,
+    subSetId : [20,22],
+    subSetName:['subSet1','subSet2']
+  },{
+    Name:'set2',
+    id:3,
+    subSetId : [],
+    subSetName : []
+  },{
+    Name: 'set3',
+    id:4,
+    subSetId : [210,212,111],
+    subSetName:['subSet1','subSet2','subSet3']
+  }]
+
+  
   e.returnValue = projectdata 
 })
 // Password Checking Process

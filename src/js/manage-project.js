@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded",() => {
     }
 })
 function loadData(){
-        
+
 
     let app = new Vue({
         el : "#app",
         data:{
             title : projectData[0],
-           UIdata :{ projectTab:true ,optionView: false, quesView:true, activeSet: -1} 
+           UIdata :{ projectTab:true ,optionView: false, quesView:true, activeSet: 0} 
         },
         methods :{
             tabchange() {

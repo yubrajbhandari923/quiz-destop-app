@@ -24,17 +24,17 @@
                         <span class="section-head">Sets
                             <div class="butt blue-butt"> Add set</div>
                         </span>
-                        <li class='set'
+                        <!-- <individual-set
+                            v-for="set in sets"
+                            :set-name="set.Name"
+                            :subset="set.subSetName"
+                        ></individual-set> -->
+                        <li 
                         v-for="set in sets"
                         :class="{ 'active-set' : (UIdata.activeSet === sets.indexOf(set)) }"
                         @click="activateSet(sets.indexOf(set))" 
                         >
-                        <span>{{ set }}</span>
-                        <ul class="subset-container">
-                            <li class="subset"> Subset 1</li>
-                            <li class="subset"> Subset 2</li>
-                            <li class="subset"> Subset 3</li>
-                        </ul>
+                        <span class='set'>{{ set.Name }}</span>
                     </li>
                 </ul>
                 <div class="sets-misc">
@@ -50,7 +50,10 @@
                     <div class="set-questions-container" >
                         <span class="section-head" @click="toggQues">Questions</span>
                         <div class="questions-content content" v-if="UIdata.quesView">
-                           <ul>
+                            <ul v-for="subsetName in sets[UIdata.activeSet].subSetName">
+                                <li><span> {{ subsetName }}  </span> <div></div></li>
+                            </ul>
+                            <ul>
                                No questions to display.
                             </ul>
                         <div class="butt blue-butt" style='float: right;'> Add question</div>
