@@ -130,10 +130,23 @@ ol {
   font-size: 20px; 
   margin: 5px 0px;
 }
+li.subset-container{
+  border-bottom: 1px solid black;
+  margin: 20px;
+}
+.subset-container > span{
+  font: 20px robotothin;
+}
 .active-set{
   background: royalblue;
   color: white;
   border-radius: 0 10px 30px 0px;
   transform: scale(1.08);
   margin: 0px;
+}
+.subset-contents{
+  display: none;
+}
+.subsetName[togg=true] + div{
+  display:block;
 }

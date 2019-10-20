@@ -22,5 +22,9 @@
   "homepage": "https://github.com/yubrajbhandari923/quiz-destop-app#readme",
   "devDependencies": {
     "electron": "^6.0.11"
+  },
+  "dependencies": {
+    "sequelize": "^5.21.1",
+    "sqlite3": "^4.1.0"
   }
 }

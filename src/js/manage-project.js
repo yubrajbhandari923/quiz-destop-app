@@ -55,6 +55,10 @@ function loadData(){
             },
             activateSet(n){
                 this.UIdata.activeSet = n
+            },
+            toggsubset(e){
+                console.log(e.target.getAttribute("togg"))
+                e.target.setAttribute("togg", (e.target.getAttribute("togg") == 'true') ? false : true )
             }
         },
         computed:{

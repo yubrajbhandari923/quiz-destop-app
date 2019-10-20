@@ -13,7 +13,7 @@
 
 
             <section class="container">
-                <div class="tabs">
+                <div class="tabs">`
                     <ul>
                         <li class="tab" :class="{ 'active-tab' : UIdata.projectTab }"  @click="tabchange">Manage sets</li>
                         <li class="tab" :class="{ 'active-tab' : !UIdata.projectTab }" @click="tabchange">Project Settings</li>
@@ -39,7 +39,7 @@
                 </ul>
                 <div class="sets-misc">
                     <div class="set-setting-container">
-                        <span class="section-head" @click="toggOpts">Options</span>
+                        <span class="section-head" @click="toggOpts" >Options</span>
                         <div class="options-contents content" v-if="UIdata.optionView">
                             <ul>
                                 <div class="butt yellow-butt"> Add a subset</div>
@@ -51,7 +51,7 @@
                         <span class="section-head" @click="toggQues">Questions</span>
                         <div class="questions-content content" v-if="UIdata.quesView">
                             <ul v-for="subsetName in sets[UIdata.activeSet].subSetName">
-                                <li><span> {{ subsetName }}  </span> <div></div></li>
+                                <li class="subset-container"><span class="subsetName" togg=false @click="toggsubset" > {{ subsetName }}  </span> <div class="subset-contents"> subsetcontenets </div></li>
                             </ul>
                             <ul>
                                No questions to display.
