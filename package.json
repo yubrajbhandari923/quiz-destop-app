@@ -4,7 +4,8 @@
   "description": "\"# quiz-destop-app\"",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps"
   },
   "repository": {
     "type": "git",
@@ -21,9 +22,10 @@
   },
   "homepage": "https://github.com/yubrajbhandari923/quiz-destop-app#readme",
   "devDependencies": {
-    "electron": "^6.0.11"
+    "electron-builder": "^21.2.0"
   },
   "dependencies": {
+    "electron": "^7.0.0",
     "sequelize": "^5.21.1",
     "sqlite3": "^4.1.0"
   }

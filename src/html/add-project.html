@@ -16,8 +16,8 @@
             <form>
                 <input type=text name=Name placeholder="Enter your project name">
                 <input type=text name=Author placeholder="Enter Author's Name">
-                <div><input type=checkbox name=Protect checked><span>Encrypt with project with Password</span></div>
-                <input type=Password name=Password placeholder="Enter a Password">
+                <div><input type=checkbox name=Protect ><span>Encrypt with project with Password</span></div>
+                <input style="display: none" type=Password name=Password placeholder="Enter a Password">
                 
             </form>
         </section>
@@ -25,4 +25,12 @@
         <div class="butt red-butt" onclick="closethiswin()">Cancel</div>
         
     </body>
+    <script>
+        let checkbox = false;
+        document.querySelector("input[type=checkbox]").onchange = () => {
+            checkbox = checkbox ? false : true ;
+            document.querySelector("input[type=Password]").style.display = checkbox ? "block" : "none"
+        }
+
+    </script>
 </html>

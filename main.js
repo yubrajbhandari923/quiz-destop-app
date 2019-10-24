@@ -4,6 +4,8 @@ let userdata = {
   password:"dont guess",
   renderproject: false
 }
+const sequelize = require('sequelize');
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win

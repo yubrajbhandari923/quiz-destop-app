@@ -1,32 +1,27 @@
-// Back end 
-const electron = require('electron')
-const BrowserWindow = electron.remote.BrowserWindow
-const { ipcRenderer } = electron
-
-
 // front End 
 var app = new Vue({
     el:"#app",
     data:{
-        projects: [{
-                Name : "Project-no-Name",
-                Description : "Short-Description-dont-goes-here!.",
-                Date: '200000',
-                Author : "yubraj Bhandry",
-                noOfSets : 5 ,
-                Protected: false 
+         projects: [], 
+        // [{
+        //         Name : "Project-no-Name",
+        //         Description : "Short-Description-dont-goes-here!.",
+        //         Date: '200000',
+        //         Author : "yubraj Bhandry",
+        //         noOfSets : 5 ,
+        //         Protected: false 
 
-            },
-            {
-                Name : "Project-Name",
-                Description : "Short-Description-goes-here!.",
-                Date: Date.now(),
-                Author : "Barsha Bhandry",
-                noOfSets : 10 ,
-                Protected: true 
+        //     },
+        //     {
+        //         Name : "Project-Name",
+        //         Description : "Short-Description-goes-here!.",
+        //         Date: Date.now(),
+        //         Author : "Barsha Bhandry",
+        //         noOfSets : 10 ,
+        //         Protected: true 
 
-            }
-         ],
+        //     }
+        //  ],
          questions : [{
              Que: "Who is the father of Science?",
              Type: "text"
@@ -60,3 +55,28 @@ var app = new Vue({
 })
 
 
+// Back end 
+const electron = require('electron')
+const BrowserWindow = electron.remote.BrowserWindow
+const { ipcRenderer } = electron
+const sequelize = require("sequelize")
+
+const errHandler = err => {
+    //Catch and log any error.
+    console.error("Error: ", err);
+  };
+
+let projs ={};
+  
+// Querying for projects from DB
+const db = require("../../Database/connection")
+// const Project = require("../../Database/models/project")
+const models = require( '../../Database/models/index');
+
+models.Project.findAll().then(projects => {
+    // projects will be an array of all Project instances
+    console.log(projects)
+    app.projects = projects
+  })
+
+db.close()

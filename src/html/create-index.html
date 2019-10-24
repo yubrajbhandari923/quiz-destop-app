@@ -20,12 +20,13 @@
                 <ul v-if="projectTab" class="proj-contain">
                     <li class="proj"
                     v-for="project in projects"
+                    project-id=" {{ project.id}} "
                     @click="projectclicked(project.Name)">
                         <span class="projName">{{ project.Name }}</span>
                         <span class="projDate"><b>Date: </b>{{ project.Date }}</span>
                         <span class="projAuthor"><b>Author: </b>{{ project.Author }}</span>
-                        <span class="projNSets"><b>No. of Sets </b> {{ project.noOfSets }}</span>
-                        <span class="projProtected"><b>Protected :</b> <span v-if="project.Protected">Yes</span><span v-else> No</span> </span>
+                        <span class="projNSets"><b>No. of Sets </b> {{ project.SetsNum }}</span>
+                        <span class="projProtected"><b>Protected :</b> <span v-if="project.key">Yes</span><span v-else> No</span> </span>
                     </li>
                     <div class="add-project-button butt" @click="addclicked"> + Add project</div>
                 </ul>
