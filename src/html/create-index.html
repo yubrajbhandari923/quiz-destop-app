@@ -20,7 +20,7 @@
                 <ul v-if="projectTab" class="proj-contain">
                     <li class="proj"
                     v-for="project in projects"
-                    project-id=" {{ project.id}} "
+                    :project-id=" project.id  "
                     @click="projectclicked(project.Name)">
                         <span class="projName">{{ project.Name }}</span>
                         <span class="projDate"><b>Date: </b>{{ project.Date }}</span>

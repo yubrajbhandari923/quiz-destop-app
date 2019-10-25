@@ -42,9 +42,14 @@ var app = new Vue({
                 resizable:false ,
 
             })
-            win.on('close', function(){ win = null})
+            
+            win.on('close', function(){ 
+                win = null ;
+                electron.remote.getCurrentWindow().reload()
+            })
             win.loadFile('src/html/add-'+key+'.html');
             win.show();
+
         },
         projectclicked(Name){
 
@@ -57,8 +62,9 @@ var app = new Vue({
 
 // Back end 
 const electron = require('electron')
-const BrowserWindow = electron.remote.BrowserWindow
+const { BrowserWindow, ipcMain } = electron.remote
 const { ipcRenderer } = electron
+
 const sequelize = require("sequelize")
 
 const errHandler = err => {

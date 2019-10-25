@@ -6,7 +6,6 @@
     </head>
     <script src='../js/add-popbox.js'>   </script>
 
-
     <body style="-webkit-app-region: drag">
       <header>
           Add a Project 
@@ -21,7 +20,7 @@
                 
             </form>
         </section>
-        <div class="butt blue-butt" onclick="closethiswin()">Done</div>
+        <div class="butt blue-butt" onclick="Done()">Done</div>
         <div class="butt red-butt" onclick="closethiswin()">Cancel</div>
         
     </body>
@@ -31,6 +30,31 @@
             checkbox = checkbox ? false : true ;
             document.querySelector("input[type=Password]").style.display = checkbox ? "block" : "none"
         }
+        const db = require("../../Database/connection")
+        const models = require("../../Database/models/index")
+        const { ipcRenderer } = electron
+        function Done(){
+            let name = document.querySelector("input[name=Name]").value 
+            let author = document.querySelector("input[name=Author]").value 
+            let Key = checkbox
+            let passkey = checkbox ? document.querySelector("input[name=Password]").value : null
 
+            models.Project.create({ 
+                Name : name,
+                Date : new Date().toJSON().slice(0,10).replace(/-/g,'/'),
+                Author : author,
+                SetsNum : 0,
+                key : Key,
+                passKey : passkey
+            })
+            .catch(err => {
+                alert(err)
+            })
+            .then(() => {
+            db.close();
+            ipcRenderer.send("reload",0)
+            closethiswin();
+            })
+        }
     </script>
 </html>

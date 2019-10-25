@@ -113,3 +113,8 @@ ipcMain.on("renderProject",(e,a) => {
 ipcMain.on('display-create-section',(e,a) => {
   win.loadFile('src/html/create-index.html')
 })
+
+//Reload the page 
+ipcMain.on("reload",(e,a) => {
+  win.reload()
+})
